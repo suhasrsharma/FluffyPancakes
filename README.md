@@ -25,7 +25,7 @@ Fluffy Pancakes is a library designed to detect phishing websites. It uses Machi
      The default value of the progressBar is 'True'. However, the option can be enabled or disabled with *boolean* 'True' or 'False' respectively.
 
 - #### Driver
-     You'll need a chromedriver in order to complete execution of the code. You can get the file from [here](https://chromedriver.chromium.org/). Unzip and add the "chromedriver.exe" file to the PYTHONPATH environment variable.
+     You'll need a chromedriver in order to complete execution of the code. You can get the file from [here](https://chromedriver.chromium.org/). Unzip and add the "chromedriver.exe" (Windows) or "chromedriver" (Linux) file to the PYTHONPATH environment variable.
 
      Well, that's a lot of work right? We know! So, we have included the current stable version of the chromedriver in the [dependencies](https://github.com/suhasrsharma/FluffyPancakes/tree/master/dependencies) folder of the repo.
 
@@ -48,7 +48,7 @@ The output is predicted with an accuracy of 95.2%. It is not a definitive classi
 
 # Dependencies
 
-- Chrome Driver : You'll need a chromedriver in order to complete execution of the code. You can get the file from [here](https://chromedriver.chromium.org/). Unzip and add the "chromedriver.exe" file to the PYTHONPATH environment variable.
+- Chrome Driver : You'll need a chromedriver in order to complete execution of the code. You can get the file from [here](https://chromedriver.chromium.org/). Unzip and add the "chromedriver.exe" (Windows) or "chromedriver" (Linux) file to the PYTHONPATH environment variable.
 
     Well, we know that's a lot of work, so we have included the current stable version of the chromedriver in the [dependencies](https://github.com/suhasrsharma/FluffyPancakes/tree/master/dependencies) folder of the repo.
 
