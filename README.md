@@ -31,6 +31,8 @@ Fluffy Pancakes is a library designed to detect phishing websites. It uses Machi
 
      __You're all set to go.__ Although, if, by any chance, you face an issue, just add to PYTHONPATH, the directory structure to where you downloaded this repository.
 
+     If you are using __Linux__, change the path of the chromedriver in controller.py from '..\dependencies\windows\chromedriver.exe' to '..\dependencies\linux\chromedriver'
+
 
 # Output
 > -1 : Legitimate Website
@@ -53,6 +55,8 @@ The output is predicted with an accuracy of 95.2%. It is not a definitive classi
     Well, we know that's a lot of work, so we have included the current stable version of the chromedriver in the [dependencies](https://github.com/suhasrsharma/FluffyPancakes/tree/master/dependencies) folder of the repo.
 
     **You're all set to go.** Although, if, by any chance, you face an issue, just add to PYTHONPATH, the directory structure to where you downloaded this repository.
+
+    If you are using **Linux**, change the path of the chromedriver in controller.py from '..\dependencies\windows\chromedriver.exe' to '..\dependencies\linux\chromedriver'
 
 # Development
 
