@@ -671,7 +671,7 @@ class Controller:
         chrome_options = Options()
         chrome_options.add_argument("--headless")
         
-        driver = webdriver.Chrome(executable_path=r'..\dependencies\chromedriver.exe', options=chrome_options)
+        driver = webdriver.Chrome(executable_path=r'..\dependencies\windows\chromedriver.exe', options=chrome_options)
         driver.get(url)
         try:
             value = driver.find_element_by_tag_name('body')
