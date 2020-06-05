@@ -107,5 +107,6 @@ __pycache__
 .pyre/
 
 node-modules
+MANIFEST.in
 
 # Credits - gitignore.io
