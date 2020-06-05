@@ -1,0 +1,7 @@
+include README.md
+include LICENSE.txt
+
+include src/data/dataset.csv
+include src/data/edu_domains.txt
+include src/data/shortening_services.txt
+include src/data/ssl_list.txt

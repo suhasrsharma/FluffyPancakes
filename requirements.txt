@@ -1,0 +1,16 @@
+=== Python Libraries ===
+
+beautifulsoup4==4.9.0
+bs4==0.0.1
+numpy==1.17.2
+pandas==1.0.4
+python-whois==0.7.2
+requests==2.23.0
+scikit-learn==0.21.3
+selenium==3.141.0
+tqdm==4.46.0
+urllib3==1.25.8
+websockets==8.1
+
+=== Selenium ===
+chromedriver: https://chromedriver.chromium.org/
