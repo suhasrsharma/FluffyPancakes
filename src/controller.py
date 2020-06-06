@@ -20,6 +20,7 @@ from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.options import Options
+import platform
 
 from recurrent import Recurrent
 
@@ -671,23 +672,34 @@ class Controller:
         chrome_options = Options()
         chrome_options.add_argument("--headless")
         
-        driver = webdriver.Chrome(executable_path=r'..\dependencies\windows\chromedriver.exe', options=chrome_options)
-        driver.get(url)
-        try:
-            value = driver.find_element_by_tag_name('body')
-            chain = ActionChains(driver)
-        except:
+        OS = str(platform.system()).lower()
+        if('windows' in OS):
+            driver = webdriver.Chrome(executable_path=r'..\dependencies\windows\chromedriver.exe', options=chrome_options)
+        elif('linux' in OS):
+            driver = webdriver.Chrome(executable_path=r'..\dependencies\linux\chromedriver', options=chrome_options)
+        elif('darwin' in OS):
+            driver = webdriver.Chrome(executable_path=r'..\dependencies\macOS\chromedriver', options=chrome_options)
+        else:
+            driver = None
+        if(driver):
+            driver.get(url)
             try:
-                value = driver.find_element_by_link_text('')
+                value = driver.find_element_by_tag_name('body')
                 chain = ActionChains(driver)
             except:
-                return 505
-        try:
-            chain.context_click(value).perform()
-            return 0
-        except:
-            return 1
-        driver.quit()
+                try:
+                    value = driver.find_element_by_link_text('')
+                    chain = ActionChains(driver)
+                except:
+                    return 505
+            try:
+                chain.context_click(value).perform()
+                return 0
+            except:
+                return 1
+            driver.quit()
+        else:
+            return 505
     
     def iFrame(self):
         resp = self.resp
