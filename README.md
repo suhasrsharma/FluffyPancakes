@@ -70,6 +70,7 @@ You can find the GitHub repository [here](https://github.com/suhasrsharma/Fluffy
 # Development Status
 ##### Development Status :: 4 - Beta
 ##### Version - 0.1.1
+##### Operating System :: OS Independent
 
 # License
 ### MIT
