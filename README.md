@@ -29,11 +29,9 @@ Fluffy Pancakes is a library designed to detect phishing websites. It uses Machi
 
      Well, that's a lot of work right? We know! So, we have included the current stable version of the chromedriver in the [dependencies](https://github.com/suhasrsharma/FluffyPancakes/tree/master/dependencies) folder of the repo.
 
+     The code automatically detects the OS (Windows, Linux Based and MacOS) and picks up the respective chromedriver file.
+
      __You're all set to go.__ Although, if, by any chance, you face an issue, just add to PYTHONPATH, the directory structure to where you downloaded this repository.
-
-     If you are using __Linux__, change the path of the chromedriver in controller.py from '..\dependencies\windows\chromedriver.exe' to '..\dependencies\linux\chromedriver'.
-
-     If you are using __Mac OS__, change the path of the chromedriver in controller.py from '..\dependencies\windows\chromedriver.exe' to '..\dependencies\macOS\chromedriver'.
 
 
 # Output
@@ -56,11 +54,10 @@ The output is predicted with an accuracy of 95.2%. It is not a definitive classi
 
     Well, we know that's a lot of work, so we have included the current stable version of the chromedriver in the [dependencies](https://github.com/suhasrsharma/FluffyPancakes/tree/master/dependencies) folder of the repo.
 
+    The code automatically detects the OS (Windows, Linux Based and MacOS) and picks up the respective chromedriver file.
+
     **You're all set to go.** Although, if, by any chance, you face an issue, just add to PYTHONPATH, the directory structure to where you downloaded this repository.
 
-    If you are using **Linux**, change the path of the chromedriver in controller.py from '..\dependencies\windows\chromedriver.exe' to '..\dependencies\linux\chromedriver'.
-
-    If you are using __Mac OS__, change the path of the chromedriver in controller.py from '..\dependencies\windows\chromedriver.exe' to '..\dependencies\macOS\chromedriver'.
 
 # Development
 
@@ -69,10 +66,6 @@ Want to contribute? Great!
 FluffyPancakes uses http requests, bs4, selenium, and of course, Machine Learning, and a lot more libraries. 
 You can find the GitHub repository [here](https://github.com/suhasrsharma/FluffyPancakes).
 
-Make sure to use the following command to get the exact versions of pytest and check-manifest:
-```sh
-$ pip install -e .[dev]
-```
 
 # Development Status
 ##### Development Status :: 4 - Beta
