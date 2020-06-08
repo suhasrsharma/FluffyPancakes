@@ -8,17 +8,12 @@ Fluffy Pancakes is a library designed to detect phishing websites. It uses Machi
 
 - #### Import 
     ```sh
-     $ from fluffypancakes import FluffyPancakes
-     ```
-
-- #### Instantialize
-    ```sh
-     $ dessert = FluffyPancakes()
+     $ import fluffypancakes
      ```
 
 - #### Call the function and Pass the URL 
     ```sh
-     $ print(dessert.serve('<website URL>', progressBar=True))
+     $ print(fluffypancakes.serve('<website URL>', progressBar=True))
      ```
 
 - #### Defaults
