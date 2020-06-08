@@ -10,32 +10,31 @@ from sklearn.ensemble import RandomForestClassifier
 
 from features import Features
 
-class FluffyPancakes:
-    def serve(self, url, progressBar=True):
-        data = pd.read_csv(r'./data/dataset.csv')
-        # Selecting required columns
-        x = data.iloc[:,1:-1]
-        y = data.iloc[:,-1]
+def serve(url, progressBar=True):
+    data = pd.read_csv(r'./data/dataset.csv')
+    # Selecting required columns
+    x = data.iloc[:,1:-1]
+    y = data.iloc[:,-1]
+    
+    # Preprocessing
+    x = x.dropna()
+    scaler = MinMaxScaler()
+    x = scaler.fit_transform(x)
+    
+    # Feature Extraction        
+    output_vector = Features().extract_features(url, progressBar)
+    
+    if(type(output_vector)!=str):
+        output_vector = [output_vector]
         
-        # Preprocessing
-        x = x.dropna()
-        scaler = MinMaxScaler()
-        x = scaler.fit_transform(x)
+        output_vector = np.asarray(output_vector)
         
-        # Feature Extraction        
-        output_vector = Features().extract_features(url, progressBar)
+        model = RandomForestClassifier(n_estimators = 30, oob_score = True, n_jobs = -1, random_state = 101, max_features = None, min_samples_leaf = 2)
+        model.fit(x, y)
         
-        if(type(output_vector)!=str):
-            output_vector = [output_vector]
-            
-            output_vector = np.asarray(output_vector)
-            
-            model = RandomForestClassifier(n_estimators = 30, oob_score = True, n_jobs = -1, random_state = 101, max_features = None, min_samples_leaf = 2)
-            model.fit(x, y)
-            
-            prediction = model.predict(output_vector)
-            prediction = prediction[0]
-        else:
-            prediction = output_vector
-            
-        return prediction
+        prediction = model.predict(output_vector)
+        prediction = prediction[0]
+    else:
+        prediction = output_vector
+        
+    return prediction

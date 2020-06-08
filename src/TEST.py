@@ -3,7 +3,6 @@
 @authors: Suhas Sharma and Rahul P
 """
 
-from fluffypancakes import FluffyPancakes
+import fluffypancakes
 
-dessert = FluffyPancakes()
-print(dessert.serve('<websiteURL>', progressBar=True))
+print(fluffypancakes.serve('<websiteURL>', progressBar=True))
