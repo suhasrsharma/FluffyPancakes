@@ -20,15 +20,6 @@ Fluffy Pancakes is a library designed to detect phishing websites. It uses Machi
 - #### Defaults
      The default value of the progressBar is 'True'. However, the option can be enabled or disabled with *boolean* 'True' or 'False' respectively.
 
-- #### Driver
-     You'll need a chromedriver in order to complete execution of the code. You can get the file from [here](https://chromedriver.chromium.org/). Unzip and add the "chromedriver.exe" (Windows) or "chromedriver" (Linux and MacOS) file to the PYTHONPATH environment variable.
-
-     Well, that's a lot of work right? We know! So, we have included the current stable version of the chromedriver in the [dependencies](https://github.com/suhasrsharma/FluffyPancakes/tree/master/dependencies) folder of the repo.
-
-     The code automatically detects the OS (Windows, Linux Based and MacOS) and picks up the respective chromedriver file.
-
-     __You're all set to go.__ Although, if, by any chance, you face an issue, just add to PYTHONPATH, the directory structure to where you downloaded this repository.
-
 
 # Output
 > -1 : Legitimate Website
@@ -46,9 +37,18 @@ The output is predicted with an accuracy of 95.2%. It is not a definitive classi
 
 # Dependencies
 
+The list of dependencies is enumerated in "requirements.txt"
+
+You can install all the dependencies by executing the following command:
+```sh
+$ pip install -r requirements.txt
+```
+
+Additional dependencies:
+
 - Chrome Driver : You'll need a chromedriver in order to complete execution of the code. You can get the file from [here](https://chromedriver.chromium.org/). Unzip and add the "chromedriver.exe" (Windows) or "chromedriver" (Linux and MacOS) file to the PYTHONPATH environment variable.
 
-    Well, we know that's a lot of work, so we have included the current stable version of the chromedriver in the [dependencies](https://github.com/suhasrsharma/FluffyPancakes/tree/master/dependencies) folder of the repo.
+    Well, that's a lot of work right? We know! So, we have included the current stable version of the chromedriver in the [dependencies](https://github.com/suhasrsharma/FluffyPancakes/tree/master/dependencies) folder of the repo.
 
     The code automatically detects the OS (Windows, Linux Based and MacOS) and picks up the respective chromedriver file.
 
