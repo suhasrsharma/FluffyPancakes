@@ -3,13 +3,13 @@
 @authors: Suhas Sharma and Rahul P
 """
 
-from controller import Controller
+from handler import Handler
 from tqdm import tqdm
 
 class Features:
     def extract_features(self, url, progressBar):
         
-        instance = Controller(url)
+        instance = Handler(url)
         
         if progressBar==False:
             if(instance.checkValidURL()==False):

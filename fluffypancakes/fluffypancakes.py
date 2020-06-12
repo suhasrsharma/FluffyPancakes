@@ -5,13 +5,17 @@
 
 import numpy as np
 import pandas as pd
+import os
+import pathlib
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import RandomForestClassifier
 
 from features import Features
 
 def serve(url, progressBar=True):
-    data = pd.read_csv(r'./data/dataset.csv')
+    path = str(pathlib.Path(__file__).parent.absolute())
+    dataset = os.path.join(path, "data", "dataset.csv")
+    data = pd.read_csv(dataset)
     # Selecting required columns
     x = data.iloc[:,1:-1]
     y = data.iloc[:,-1]
@@ -36,5 +40,5 @@ def serve(url, progressBar=True):
         prediction = prediction[0]
     else:
         prediction = output_vector
-        
+
     return prediction

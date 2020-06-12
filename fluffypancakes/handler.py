@@ -21,10 +21,12 @@ from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.options import Options
 import platform
+import pathlib
+import os
 
 from recurrent import Recurrent
 
-class Controller:
+class Handler:
     def __init__(self, url):
         self.url = url
         self.IP = False
@@ -42,7 +44,7 @@ class Controller:
     # Note that 23 out of 30 features have been used 
     def checkValidURL(self):
         validURL = self.validURL
-        Controller.havingIPAddress(self)
+        Handler.havingIPAddress(self)
         if(validURL==True or self.IP==True):
             return True
         elif(validURL==False or self.IP==False):
@@ -98,9 +100,11 @@ class Controller:
     def shorteningService(self):
         url = self.url
         short_url, long_url = url, ''
-        test_read = open(r'./data/shortening_services.txt', 'r')
+        path = str(pathlib.Path(__file__).parent.absolute())
+        shortening_services =  os.path.join(path, "data", "shortening_services.txt")
+        test_read = open(shortening_services, 'r')
         
-        havingIP = Controller.havingIPAddress(self)
+        havingIP = Handler.havingIPAddress(self)
         
         #To get the proper shortened URL and convert it to a regular long URL; second parameter -> if URL not an IP
         if((('http://' or 'https://') not in url) and (havingIP!=1)):
@@ -115,12 +119,16 @@ class Controller:
                 session = requests.Session()
                 resp = session.head(short_url, allow_redirects=True)
                 long_url = resp.url
-                return 1
+                test_read.close()
                 self.url = long_url
+                test_read.close()
+                return 1
             else:
-                return 0
+                test_read.close()
                 self.url = url
+                return 0
         else:
+            test_read.close()
             self.url = url
             return 0
         
@@ -141,7 +149,7 @@ class Controller:
     
     def havingSubDomain(self):
         parts = self.parts
-        havingIP = Controller.havingIPAddress(self)
+        havingIP = Handler.havingIPAddress(self)
         #Handling if IP case
         if(havingIP!=1):
             if('www' in parts.netloc):
@@ -162,7 +170,7 @@ class Controller:
             return 0
     
     def SSLFinalState(self):
-        havingIP = Controller.havingIPAddress(self)
+        havingIP = Handler.havingIPAddress(self)
         if(havingIP==1):
             return 1
         else:
@@ -182,21 +190,29 @@ class Controller:
             if(len(issued_by.split(" "))>1):
                 CA = issued_by.split(" ")[0] + " " + issued_by.split(" ")[1] 
             
-            SSL_read = open(r'./data/ssl_list.txt','r')
+            path = str(pathlib.Path(__file__).parent.absolute())
+            ssl_list = os.path.join(path, "data", "ssl_list.txt")
+            SSL_read = open(ssl_list,'r')
             
             if((issued_by.split()[0] or CA)in SSL_read.read()):
+                SSL_read.close()
                 return 0
             else:
+                SSL_read.close()
                 return 1
     
     def domainRegistration(self):
-        test_read = open(r'./data/edu_domains.txt', 'r')
+        path = str(pathlib.Path(__file__).parent.absolute())
+        edu_domains = os.path.join(path, "data", "edu_domains.txt")
+        test_read = open(edu_domains, 'r')
         parts = self.parts
         domain_name = parts.netloc
         if('.edu' in domain_name):
             if(domain_name in test_read.read()):
+                test_read.close()
                 return 0 
             else:
+                test_read.close()
                 return 1
         else:
             w = self.w
@@ -371,7 +387,7 @@ class Controller:
         soup = self.soup
         
         try:
-            outYouTubeCount, totalYouTubeCount = Controller.get_videos(url, outYouTubeCount, totalYouTubeCount)
+            outYouTubeCount, totalYouTubeCount = Handler.get_videos(url, outYouTubeCount, totalYouTubeCount)
             totalCount += totalYouTubeCount
         except IndexError:
             #print("The inner function is causing some issue: title[0] - index out of range")
@@ -674,11 +690,17 @@ class Controller:
         
         OS = str(platform.system()).lower()
         if('windows' in OS):
-            driver = webdriver.Chrome(executable_path=r'..\dependencies\windows\chromedriver.exe', options=chrome_options)
+            windows_path = str(pathlib.Path(__file__).parent.absolute())
+            chromedriver_windows = os.path.join(windows_path, "dependencies/windows", "chromedriver.exe")
+            driver = webdriver.Chrome(executable_path=chromedriver_windows, options=chrome_options)
         elif('linux' in OS):
-            driver = webdriver.Chrome(executable_path=r'..\dependencies\linux\chromedriver', options=chrome_options)
+            linux_path = str(pathlib.Path(__file__).parent.absolute())
+            chromedriver_linux = os.path.join(linux_path, "dependencies/linux", "chromedriver")
+            driver = webdriver.Chrome(executable_path=chromedriver_linux, options=chrome_options)
         elif('darwin' in OS):
-            driver = webdriver.Chrome(executable_path=r'..\dependencies\macOS\chromedriver', options=chrome_options)
+            macOS_path = str(pathlib.Path(__file__).parent.absolute())
+            chromedriver_macOS = os.path.join(macOS_path, "dependencies/macOS", "chromedriver")
+            driver = webdriver.Chrome(executable_path=chromedriver_macOS, options=chrome_options)
         else:
             driver = None
         if(driver):
