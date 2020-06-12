@@ -65,7 +65,7 @@ Want to contribute? Great!
 
 FluffyPancakes uses http requests, bs4, selenium, and of course, Machine Learning, and a lot more libraries. 
 
-You can find the PyPI repository [here](https://pypi.org/project/fluffypancakes/).
+You can find the **PyPI** repository [here](https://pypi.org/project/fluffypancakes/).
 
 Make sure you use the following command to get the exact versions of pytest and twine:
 
