@@ -43,6 +43,7 @@ The output is predicted with an accuracy of 95.2%. It is not a definitive classi
 The list of dependencies is enumerated in "requirements.txt"
 
 You can install all the dependencies by executing the following command:
+
 ```sh
 $ pip install -r requirements.txt
 ```
@@ -63,6 +64,7 @@ Additional dependencies:
 Want to contribute? Great!
 
 FluffyPancakes uses http requests, bs4, selenium, and of course, Machine Learning, and a lot more libraries. 
+
 You can find the PyPI repository [here](https://pypi.org/project/fluffypancakes/).
 
 Make sure you use the following command to get the exact versions of pytest and twine:
