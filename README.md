@@ -4,6 +4,7 @@ Fluffy Pancakes is a library designed to detect phishing websites. It uses Machi
 
 *Note: Please bear with us for a few seconds to get the output since the library is computationally intensive. We felt bad for making you wait, so we have included a progress bar that you can enable to see the percentage of progress and also the time taken for execution. Also note that the library heavily depends on a stable internet connection to function its best and to obtain the results. So, the quicker your internet connection is, the faster your results will be :).*
 
+** You can find the PyPI package [here](https://pypi.org/project/fluffypancakes/)**
 
 # Usage
 
@@ -25,6 +26,8 @@ Fluffy Pancakes is a library designed to detect phishing websites. It uses Machi
 > -1 : Legitimate Website
 
 > 1 : Phishing Website
+
+> "The URL entered is either Invalid or the Host is unserviceable" : For invalid URLs and Unservicable Hosts
 
 > Sample output:
 >
