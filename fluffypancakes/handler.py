@@ -24,7 +24,7 @@ import platform
 import pathlib
 import os
 
-from recurrent import Recurrent
+from fluffypancakes.recurrent import Recurrent
 
 class Handler:
     def __init__(self, url):

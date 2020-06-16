@@ -10,7 +10,7 @@ import pathlib
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import RandomForestClassifier
 
-from features import Features
+from fluffypancakes.features import Features
 
 def serve(url, progressBar=True):
     path = str(pathlib.Path(__file__).parent.absolute())

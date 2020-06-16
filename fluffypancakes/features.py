@@ -3,7 +3,7 @@
 @authors: Suhas Sharma and Rahul P
 """
 
-from handler import Handler
+from fluffypancakes.handler import Handler
 from tqdm import tqdm
 
 class Features:
