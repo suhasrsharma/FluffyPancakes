@@ -88,4 +88,4 @@ You can find the sample test case [here](https://github.com/suhasrsharma/FluffyP
 
 ---
 
-In collaboration with the [ISFCR Lab](https://research.pes.edu/isfcr/) at [PES University](https://www.pes.edu/), Bangalore, India.
+In collaboration with the [Center for ISFCR](https://www.isfcr.pes.edu/) at [PES University](https://www.pes.edu/), Bangalore, India, under the guidance of [Mr. Prasad B Honnavali](https://faculty.pes.edu/p10020).
