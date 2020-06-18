@@ -426,14 +426,15 @@ class Handler:
             for i in vids:
                 if(i.get('src')):
                     vid = i.get('src')
-                parts_vid = urlparse.urlsplit(vid)
-                if(parts_vid.scheme):
-                    if(parts.hostname != parts_vid.hostname):
-                        outVidCount += 1
+                if(vid):
+                    parts_vid = urlparse.urlsplit(vid)
+                    if(parts_vid.scheme):
+                        if(parts.hostname != parts_vid.hostname):
+                            outVidCount += 1
+                            totalCount += 1
+                    else:
+                        inVidCount += 1
                         totalCount += 1
-                else:
-                    inVidCount += 1
-                    totalCount += 1
         else:
             pass
         
@@ -441,14 +442,15 @@ class Handler:
             for i in videos:
                 if(i.get('src')):
                     video = i.get('src')
-                parts_video = urlparse.urlsplit(video)
-                if(parts_video.scheme):
-                    if(parts.hostname != parts_video.hostname):
-                        outVideoCount += 1
+                if(video):
+                    parts_video = urlparse.urlsplit(video)
+                    if(parts_video.scheme):
+                        if(parts.hostname != parts_video.hostname):
+                            outVideoCount += 1
+                            totalCount += 1
+                    else:
+                        inVideoCount += 1
                         totalCount += 1
-                else:
-                    inVideoCount += 1
-                    totalCount += 1
         else:
             pass
         
