@@ -13,7 +13,7 @@ Fluffy Pancakes is a library designed to detect phishing websites. It uses Machi
 
     **OR**
 
-    You can use clone the repository onto your system and:
+    You can clone the repository onto your system and:
 
 - #### Import 
     ```py
