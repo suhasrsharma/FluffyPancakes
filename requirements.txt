@@ -9,4 +9,4 @@ selenium==3.141.0
 sklearn==0.0
 tqdm==4.46.0
 urllib3==1.25.8
-websockets==8.1
+websockets==9.1
