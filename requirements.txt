@@ -1,6 +1,6 @@
 beautifulsoup4==4.9.0
 bs4==0.0.1
-numpy==1.17.2
+numpy==1.22.0
 pandas==1.0.4
 python-whois==0.7.2
 requests==2.23.0
